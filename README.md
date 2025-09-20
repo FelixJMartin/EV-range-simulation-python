@@ -46,8 +46,34 @@ The program uses real-world data from a Tesla Roadster and GPS-tracked speed pro
 
 - **NYC Traffic Model**: Based on historical average speeds from NYC road segments
 
-## License
 
-CC BY-NC-SA 4.0 — for educational use.
 
-> Developed as part of the course in Scientific Computing, Uppsala University, 2025.
+# EV Range Estimation — Tesla Roadster Simulation
+
+The project involves developing a navigation app and onboard computer for electric vehicles, extended with functionality to estimate the remaining driving range along a given route based on the vehicle’s current battery charge. Since energy consumption depends strongly on speed, range can vary significantly between different routes.
+
+In this project, we estimate range using data on energy consumption at different speeds together with expected speed along a chosen route. For development, we use consumption data from the Tesla Roadster combined with GPS-derived speed data for a test route. The functionality is designed to be generalizable to other vehicle models and adaptable to expected speeds derived from speed limits, historical driving data, or real-time traffic information.
+
+### Part 1a) Energy Consumption Model
+
+To estimate the driving range of the Tesla Roadster, the energy consumption as a function of speed is modeled by:
+
+\[
+c(v) = a_1 v^{-1} + a_2 + a_3 v + a_4 v^2
+\]
+
+with coefficients:
+
+- \(a_1 = 546.8\)  
+- \(a_2 = 50.31\)  
+- \(a_3 = 0.2584\)  
+- \(a_4 = 0.008210\)
+
+Here \(v\) is the speed in km/h and \(c(v)\) is the consumption in Wh/km.
+
+**Task A:**  
+Implement the function `consumption(v)` in `roadster.py` so that it computes \(c(v)\) for any positive input speed. The function must support both scalar inputs and NumPy arrays, returning the corresponding scalar or array of consumption values.
+
+In addition, update the script `script_part1a.py` to plot the energy consumption as a function of speed over the interval \(v \in [1,200]\) km/h.
+
+
