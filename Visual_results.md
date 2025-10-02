@@ -34,7 +34,3 @@ Simulerade resor med olika starttider \(t_0\).
 ![Simulerad resa](assets/img/routesim.png)
 
 ---
-
-## Noteringar
-- Denna sida speglar **resultatavsnittet** i LaTeX-rapporten; endast bildvisning i Markdown.
-- Se rapporten för fulla resonemang, ekvationer och metoddetaljer.
